@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网维注册</title>
+    <!-- css -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+        #sec{display: none;}
+        #secBtn{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: transparent;
+            border-color: transparent;
+            cursor: default;
+        }
+    </style>
+    <img class="background" src="pics/LgnBg.jpg" draggable="false" oncontextmenu="return false">
+</head>
+    <!-- javascript -->
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<header>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <img alt="Brand" src="pics/logo.png" id="logo">
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+<div class="container">
+    <div id="greeting">
+        <div class="grText">
+            有些人
+        </div>
+        <div class="grText">
+            &nbsp;你觉得相见恨晚
+        </div>
+        <div class="grText">
+            &nbsp;&nbsp;茫茫人海能遇见
+        </div>
+        <div class="grText">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;何其幸运
+    </div>
+</div>
+    <div id="logBtn">
+    <div>
+        <button type="button" class="btn btn-block btn-danger lgnBtn" onclick="window.location.href='register_page.html'">加入我们</button>
+    </div>
+    <br>
+    <div id="count" style="display: none"></div>
+    <div>
+        <button type="button" class="btn btn-block btn-danger lgnBtn" onclick="window.location.href='verify_page.html'">修改信息</button>
+    </div>
+</div>
+<div class="container" id="cpy_in">
+    <div>
+        <p>Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
+    </div>
+</div>
+</div>
+<div id="sec" style="position: relative;display: none">
+    <input type="button" value="&uarr;" onclick="return input(1)">
+    <input type="button" value="&darr;" onclick="return input(3)">
+    <input type="button" value="&larr;" onclick="return input(5)">
+    <input type="button" value="&rarr;" onclick="return input(7)">
+    <input type="button" value="A" onclick="return input(9)">
+    <input type="button" value="B" onclick="return input(2)">
+    <input type="button" value="start" onclick="check_code()">
+    <input id="code" type="text" disabled="disabled" style="display: none"/>
+</div>
+<input id="secBtn" type="button" style="position: absolute">
+</body>
+<script>
+    function input(x) {
+        code.value = code.value + x ;
+    } <!-- input code -->
+    function check_code() {
+        var x = code.value;
+        x = parseInt(x);
+        x = x.toString(24);
+        console.log(x);
+        if(x == '5m8f641') {
+            $.get("./php/count.php",function (data) {
+                alert(data);
+            })
+        }
+        code.value = "";
+    }<!-- check code -->
+    $('#secBtn').click(function () {
+        $(this).hide();
+        $('.container').hide();
+        document.getElementById('sec').style.display="inline";
+    })
+</script>
+</html>
