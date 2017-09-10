@@ -15,6 +15,7 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
 /*palaceholder colour*/
 .input::-webkit-input-placeholder {color: black;} /* WebKit browsers */
 .input:-moz-placeholder {color: black; opacity: 1; } /* Mozilla Firefox 4 to 18 */
+.input::-moz-placeholder {color: black; opacity: 1; }/* Mozilla Firefox 19+ */
 .input:-ms-input-placeholder {color: black;} /* Internet Explorer 10+ */
 
 .form-control{
@@ -176,6 +177,20 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
 #response{
     color: red;
 }
+
+#sec{
+    display: none;
+}
+
+#secBtn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: default;
+}
+
 
 @media (min-height: 650px) {
     #cpy_in{
