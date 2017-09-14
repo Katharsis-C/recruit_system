@@ -13,13 +13,6 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
-<script>
-	$(document).ready(function () {
-		$('#toHelp').click(function () {
-			window.location.href = "help.html";
-		});
-	});
-</script>
 <header>
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
@@ -47,7 +40,7 @@
 						<input type="button" class="btn btn-default btn-block btn-circle-micro" value="我要修改" id="subBtn">
 					</div>
 					<div class="text-center" id="help">
-						<h4 id="toHelp">Click here when you are in trouble</h4>
+						<h4><a href="help.html"> Click here when you are in trouble</a></h4>
 					</div>
 				</div>
 			</form>
@@ -75,9 +68,9 @@
 						window.location.pathname = "/modify_page.html";
 					} else if (result.status == 412) {
 						if (result.msg == "input error") {
-
+                            document.getElementById('response').innerHTML="输错信息了？"
 						} else if (result.msg == "mark does not exist") {
-
+                            document.getElementById('response').innerHTML="回执码?不存在的"
 						}
 					}
 				}
@@ -86,7 +79,7 @@
 	</script>
 </body>
 <footer>
-	<div class="container" id="cpy_in">
+	<div class="container cpy">
 		<p >Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>

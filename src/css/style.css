@@ -18,6 +18,7 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
 .input::-moz-placeholder {color: black; opacity: 1; }/* Mozilla Firefox 19+ */
 .input:-ms-input-placeholder {color: black;} /* Internet Explorer 10+ */
 
+/*global*/
 .form-control{
     border: 1px solid rgba(255,255,255,0.1);
     background: rgba(255,255,255,0.5);
@@ -30,82 +31,13 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
     height:100%;
 }
 
-#tips{color: white;}
-
-.hint{color: red;}
-
-.selHint{display: none;}
-
-#MK{
-    line-height: 2.5;
-    position: fixed;
-    left: 0;
-    right: 0;
-}
-
 #help{
     min-width: 300px;
+    cursor: default;
 }
 
-#subBtn{border-radius: 2em;}
-
-#greeting{
-    writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    position: relative;
-    font-size: 1.5em;
-    letter-spacing: 6px;
-    left: 50%;
-    top: 10vw;
-}
-
-.grText{
-    color: white;
-}
-
-#stinger{
-    font-size: 11px;
-    letter-spacing: normal;
-    color: rgb(119,66,141);
-    display: none;
-}
-
-#logBtn{
-    position: relative;
-    margin-right: 20%;
-    margin-left: 20%;
-    padding-top: 20%;
-}
-
-.lgnBtn{
-    background: repeating-linear-gradient(to right,rgba(212,63,58,0),rgba(212,63,58,0.75),rgba(212,63,58,0));
-    border-color: transparent;
-    color: rgba(255,255,255,0.8);
-    border-radius: 0px;
-    height: 30px
-}
-
-#sos{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-}
-
-#mod_form{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#main{
-    position: relative;
-    top: 20px;
-    margin-bottom: 10%;
+#response{
+    color: red;
 }
 
 #Rectangle{
@@ -114,68 +46,31 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
     border-radius: 3em;
 }
 
-#Sustext{
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#toHelp{
-    color: white;
-    cursor: default;
-}
-
-#cpy_in{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 2px;
-    min-width: 284px;
-    max-width: 340px;
-    background-color: rgba(168,216,185,0.8);
-    border-radius: 1em;
-    color: white;
-    text-align: center;
-    padding-top: 6px;
-
-}
-#cpy_re{
+.cpy{
     min-width: 284px;
     max-width: 340px;
     background-color: rgba(168,216,185,0.8);
     border-radius: 0.5em;
     color: white;
     text-align: center;
+    padding-top: 6px;
+    margin-top: 5%;
+}
+
+.hint{color: red;}
+
+/*index*/
+#greeting{
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    font-size: 1.5em;
+    letter-spacing: 6px;
     position: relative;
-    padding-top: 6px;
-}
-#cpy_hp{
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    min-width: 284px;
-    max-width: 340px;
-    background-color: rgba(168,216,185,0.8);
-    border-radius: 0.5em;
-    color: white;
-    text-align: center;
+    margin-bottom: 10%;
 }
 
-#cpy_su{
+.grText{
     color: white;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    display: none;
-    text-align: center;
-    max-height: 20px;
-}
-
-#response{
-    color: red;
 }
 
 #sec{
@@ -191,24 +86,85 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
     cursor: default;
 }
 
+#txt{
+    margin-top: 20%;
 
-@media (min-height: 650px) {
-    #cpy_in{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 10px;
-    }
-    #cpy_re{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 10px;
-    }
 }
 
+.lgnBtn{
+    position: relative;
+    background: repeating-linear-gradient(to right,rgba(212,63,58,0),rgba(212,63,58,0.75),rgba(212,63,58,0));
+    border-color: transparent;
+    color: rgba(255,255,255,0.8);
+    border-radius: 0px;
+    height: 30px
+}
+
+
+/*modify*/
+#main{
+    margin-top: 25%;
+}
+
+
+
+#tips{color: white;}
+
+.selHint{display: none;}
+
+/*register*/
+#MK{
+    line-height: 2.5;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+#subBtn{border-radius: 2em;}
+
+#Sustext{
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#cpy_su{
+    color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    display: none;
+    text-align: center;
+    max-height: 20px;
+}
+
+
+/*help*/
+#sos{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/*verify*/
+#mod_form{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
 /* animation */
-#main,#mod_form,#cpy_re,#cpy_hp,#cpy_in {
+#main,#mod_form,.cpy {
     -webkit-animation: fadeIn 0.5s infinite;
     animation: fadeIn 0.5s infinite;
     animation-iteration-count: 1;
@@ -224,10 +180,5 @@ html{font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica N
 @-webkit-keyframes fadeIn {
     from{opacity: 0;}
     to{opacity: 1;}
-}
-
-/*jq mobile*/
-.ui-loader{
-    display: none;
 }
 

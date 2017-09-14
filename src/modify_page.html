@@ -13,24 +13,6 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
-<script type="text/javascript">
-	$(document).ready(function () {
-		$('input').focus(function () {
-			$('.hint').text('');
-		});
-		$('#toHelp').click(function () {
-			window.location.href = "help.html";
-		});
-		document.getElementById("_name").value = getCookie("name");
-		document.getElementById("mark").value = getCookie("mark");
-		document.getElementById("name").value = getCookie("name");
-		document.getElementById("phone").value = getCookie("phone");
-		document.getElementById("email").value = getCookie("email");
-		document.getElementById("faculty").value = getCookie("faculty");
-		document.getElementById("class").value = getCookie("class");
-		document.getElementById("number").value = getCookie("number");
-	});
-</script>
 <header>
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
@@ -42,10 +24,6 @@
 		</div>
 	</nav>
 </header>
-<script>
-	if (!getCookie("name") && !getCookie("mark"))
-		window.location.pathname = "/verify_page.html";
-</script>
 <body>
 	<div class="container" id="main">
 		<div>
@@ -94,17 +72,32 @@
 					<span id="response"></span>
 					<input type="button" class="btn btn-default btn-block btn-circle-micro" value="修改" id="subBtn" onclick="Subform()">
 					<div class="text-center" id="help">
-						<h4 id="toHelp">Click here when you are in trouble</h4>
+						<h4><a href="help.html"> Click here when you are in trouble</a></h4>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script>
-		$('#faculty').ready(function () {
+        if (!getCookie("name") && !getCookie("mark"))
+            window.location.pathname = "/verify_page.html";
+
+        $('#faculty').ready(function () {
 			getClassName();
-			document.getElementById("class").value = getCookie("class");
+            document.getElementById("_name").value = getCookie("name");
+            document.getElementById("mark").value = getCookie("mark");
+            document.getElementById("name").value = getCookie("name");
+            document.getElementById("phone").value = getCookie("phone");
+            document.getElementById("email").value = getCookie("email");
+            document.getElementById("faculty").value = getCookie("faculty");
+            document.getElementById("class").value = getCookie("class");
+            document.getElementById("number").value = getCookie("number");
 		});
+
+        $('input').focus(function () {
+            $('.hint').text('');
+        })
+
 		function Subform()
 		{
 			var r = check();
@@ -135,15 +128,15 @@
 							window.location.pathname = "/verify_page.html";
 						} else if (result.status == 409) {
 							if (result.msg == "phone is registered") {
-
+								 document.getElementById('response').innerHTML="该手机号已注册"
 							} else if (result.msg == "email is registered") {
-
+                                document.getElementById('response').innerHTML="该邮箱已注册"
 							}
 						} else if (result.status == 412) {
 							if (result.msg == "input error") {
-
+                                document.getElementById('response').innerHTML="输入错误？仔细想想有什么填错了…"
 							} else if (result.msg == "information does not exist") {
-
+                                document.getElementById('response').innerHTML="莫非你是传说中的老油条?"
 							}
 						}
 					}
@@ -156,7 +149,7 @@
 	</script>
 </body>
 <footer>
-	<div class="container" id="cpy_re">
+	<div class="container cpy">
 		<p >Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>
