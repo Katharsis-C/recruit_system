@@ -14,7 +14,6 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
-
 <header>
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
@@ -71,8 +70,8 @@
 					<div class="text-center" id="tips"><h5>带‘*’为必填项</h5></div>
 					<span id="response"></span>
 					<input type="button" class="btn btn-default btn-block btn-circle-micro" value="报名" id="subBtn" onclick="Subform()">
-					<div class="text-center" id="help">
-						<h4><a href="help.html"> Click here when you are in trouble</a></h4>
+					<div class="text-center">
+						<h4><a href="help.html" id="help"> Click here when you are in trouble</a></h4>
 					</div>
 				</div>
 			</form>
@@ -116,9 +115,7 @@
 
 				if (xmlhttp.readyState === 4) {
 					if (xmlhttp.status === 200) {
-						console.log(xmlhttp.responseText);
 						var result = JSON.parse(xmlhttp.responseText);
-						console.log(result);
 						if (result.status == 200) {
 							document.getElementById('MK').innerHTML = result.data.mark;
 							document.getElementById('main').style.display = 'none';
@@ -126,7 +123,7 @@
 							document.getElementById('logo').style.display = 'none';
 							document.getElementById('bg1').style.display = 'none';
 							document.getElementById('bg2').style.display = 'inline';
-							document.getElementById('cpy_re').style.display = 'none';
+							document.getElementById('cpy_form').style.display = 'none';
 							document.getElementById('cpy_su').style.display = 'inline';
 						} else if (result.status == 409) {
 							if (result.msg == "phone is registered") {
@@ -157,7 +154,7 @@
     </script>
 </body>
 <footer>
-	<div class="container cpy">
+	<div class="container cpy" id="cpy_form">
 		<p>Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 	<div id="cpy_su">

@@ -39,8 +39,8 @@
 					<div>
 						<input type="button" class="btn btn-default btn-block btn-circle-micro" value="我要修改" id="subBtn">
 					</div>
-					<div class="text-center" id="help">
-						<h4><a href="help.html"> Click here when you are in trouble</a></h4>
+					<div class="text-center">
+						<h4><a href="help.html" id="help"> Click here when you are in trouble</a></h4>
 					</div>
 				</div>
 			</form>
@@ -57,9 +57,7 @@
 				type: "POST",
 				data: s,
 				complete: function (result) {
-					console.log(result.responseText);
 					result = JSON.parse(result.responseText);
-					console.log(result);
 					if (result.status == 200) {
 						var date = new Date();
 						date.setMinutes(date.getMinutes() + 1);
@@ -68,9 +66,9 @@
 						window.location.pathname = "/modify_page.html";
 					} else if (result.status == 412) {
 						if (result.msg == "input error") {
-                            document.getElementById('response').innerHTML="输错信息了？"
+                            document.getElementById('response').innerHTML="输错信息了？";
 						} else if (result.msg == "mark does not exist") {
-                            document.getElementById('response').innerHTML="回执码?不存在的"
+                            document.getElementById('response').innerHTML="回执码不存在";
 						}
 					}
 				}
@@ -79,7 +77,7 @@
 	</script>
 </body>
 <footer>
-	<div class="container cpy">
+	<div class="container cpy" id="cpy_vy">
 		<p >Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>

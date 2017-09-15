@@ -71,85 +71,80 @@
 					<div class="text-center" id="tips"><h5>带‘*’为必填项</h5></div>
 					<span id="response"></span>
 					<input type="button" class="btn btn-default btn-block btn-circle-micro" value="修改" id="subBtn" onclick="Subform()">
-					<div class="text-center" id="help">
-						<h4><a href="help.html"> Click here when you are in trouble</a></h4>
+					<div class="text-center">
+						<h4><a href="help.html" id="help"> Click here when you are in trouble</a></h4>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script>
-        if (!getCookie("name") && !getCookie("mark"))
-            window.location.pathname = "/verify_page.html";
+            $('#faculty').ready(function () {
+                document.getElementById("_name").value = getCookie("name");
+                document.getElementById("mark").value = getCookie("mark");
+                document.getElementById("name").value = getCookie("name");
+                document.getElementById("phone").value = getCookie("phone");
+                document.getElementById("email").value = getCookie("email");
+                document.getElementById("faculty").value = getCookie("faculty");
+                document.getElementById("number").value = getCookie("number");
+                getClassName();
+                document.getElementById("class").value = getCookie("class");
+            });
+            if (!getCookie("name") && !getCookie("mark"))
+                window.location.pathname = "/verify_page.html";
+            $('input').focus(function () {
+                $('.hint').text('');
+            })
 
-        $('#faculty').ready(function () {
-			getClassName();
-            document.getElementById("_name").value = getCookie("name");
-            document.getElementById("mark").value = getCookie("mark");
-            document.getElementById("name").value = getCookie("name");
-            document.getElementById("phone").value = getCookie("phone");
-            document.getElementById("email").value = getCookie("email");
-            document.getElementById("faculty").value = getCookie("faculty");
-            document.getElementById("class").value = getCookie("class");
-            document.getElementById("number").value = getCookie("number");
-		});
+            function Subform() {
+                var r = check();
+                if (r !== true) {
+                    return false;
+                }
+                var Oname = document.getElementById('_name').value;
+                var mark = document.getElementById('mark').value;
+                var name = document.getElementById('name').value;
+                var phone = document.getElementById('phone').value;
+                var email = document.getElementById('email').value;
+                var faculty = document.getElementById('faculty').value;
+                var classes = document.getElementById('class').value;
+                var number = document.getElementById('number').value;
 
-        $('input').focus(function () {
-            $('.hint').text('');
-        })
+                var xmlhttp = new XMLHttpRequest();
+                var s = "_name=" + Oname + "&mark=" + mark + "&name=" + name + "&phone=" + phone + "&email=" + email + "&faculty=" + faculty + "&class=" + classes + "&number=" + number;
+                s = encodeURI(s).replace(/\+/g, "%2B");
 
-		function Subform()
-		{
-			var r = check();
-			if (r !== true) {
-				return false;
-			}
-			var Oname = document.getElementById('_name').value;
-			var mark = document.getElementById('mark').value;
-			var name = document.getElementById('name').value;
-			var phone = document.getElementById('phone').value;
-			var email = document.getElementById('email').value;
-			var faculty = document.getElementById('faculty').value;
-			var classes = document.getElementById('class').value;
-			var number = document.getElementById('number').value;
-
-			var xmlhttp = new XMLHttpRequest();
-			var s = "_name=" + Oname + "&mark=" + mark + "&name=" + name + "&phone=" + phone + "&email=" + email + "&faculty=" + faculty + "&class=" + classes + "&number=" + number;
-			s = encodeURI(s).replace(/\+/g, "%2B");
-
-			xmlhttp.onreadystatechange = function () {
-				if (xmlhttp.readyState === 4) {
-					if (xmlhttp.status === 200) {
-						console.log(xmlhttp.responseText);
-						var result = JSON.parse(xmlhttp.responseText);
-						console.log(result);
-						document.getElementById('response').innerHTML = result;
-						if (result.status == 200) {
-							window.location.pathname = "/verify_page.html";
-						} else if (result.status == 409) {
-							if (result.msg == "phone is registered") {
-								 document.getElementById('response').innerHTML="该手机号已注册"
-							} else if (result.msg == "email is registered") {
-                                document.getElementById('response').innerHTML="该邮箱已注册"
-							}
-						} else if (result.status == 412) {
-							if (result.msg == "input error") {
-                                document.getElementById('response').innerHTML="输入错误？仔细想想有什么填错了…"
-							} else if (result.msg == "information does not exist") {
-                                document.getElementById('response').innerHTML="莫非你是传说中的老油条?"
-							}
-						}
-					}
-				}
-			};
-			xmlhttp.open("POST", "./php/modify.php", true);
-			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xmlhttp.send(s);
-		}
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4) {
+                        if (xmlhttp.status === 200) {
+                            var result = JSON.parse(xmlhttp.responseText);
+                            document.getElementById('response').innerHTML = result;
+                            if (result.status == 200) {
+                                document.getElementById('response').innerHTML="修改成功";
+                            } else if (result.status == 409) {
+                                if (result.msg == "phone is registered") {
+                                    document.getElementById('response').innerHTML = "该手机号已注册"
+                                } else if (result.msg == "email is registered") {
+                                    document.getElementById('response').innerHTML = "该邮箱已注册"
+                                }
+                            } else if (result.status == 412) {
+                                if (result.msg == "input error") {
+                                    document.getElementById('response').innerHTML = "输入错误？仔细想想有什么填错了…"
+                                } else if (result.msg == "information does not exist") {
+                                    document.getElementById('response').innerHTML = "莫非你是传说中的老油条?"
+                                }
+                            }
+                        }
+                    }
+                };
+                xmlhttp.open("POST", "./php/modify.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send(s);
+            }
 	</script>
 </body>
 <footer>
-	<div class="container cpy">
+	<div class="container cpy" id="cpy_form">
 		<p >Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>
