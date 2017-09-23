@@ -21,6 +21,7 @@ html,body{
 .input:-ms-input-placeholder {color: black;} /* Internet Explorer 10+ */
 
 /*global*/
+
 .form-control{
     border: 1px solid rgba(255,255,255,0.1);
     background: rgba(255,255,255,0.5);
@@ -31,6 +32,7 @@ html,body{
     position:fixed;
     width:100%;
     height:100%;
+    overflow: hidden;
 }
 
 #response{
@@ -54,7 +56,16 @@ html,body{
     padding-top: 6px;
 }
 
-.hint{color: red;}
+.hint{
+    font-size: 13px;
+    display: block;
+    margin-top: 2px;
+    margin-bottom:5px;
+    color: red;
+    letter-spacing: 1px;
+}
+
+
 
 /*index*/
 .grText{
@@ -66,20 +77,27 @@ html,body{
     position: relative;
 }
 
+#text{
+    padding-right:5%;
+    margin-top: 10vh;
+}
+
+#deadline{
+    color: white;
+    margin-top: 10px;
+}
+
 #linkarea{
     text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 14%;
+    position: relative;
 }
 
 .linkBtn{
     display: inline-block;
     background: transparent;
-    padding: 10px;
+    padding: 5px;
     color: white;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 250px;
     border: 1px solid;
     border-radius: 2em;
@@ -113,7 +131,6 @@ html,body{
     margin-top: 10vh;
 }
 
-#tips{color: white;}
 
 .selHint{display: none;}
 
@@ -159,7 +176,7 @@ html,body{
 }
 
 #cpy_form{
-    margin-top: 31px;
+    margin-top: 66px;
 }
 
 #Rectangle{
@@ -178,6 +195,14 @@ html,body{
     color: white;
 }
 
+#cpy_hp{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding-top: 0;
+}
+
 /*verify*/
 #mod_form{
     position: absolute;
@@ -193,6 +218,16 @@ html,body{
     bottom: 0px;
     right: 0px;
 }
+
+@media(min-height: 540px){
+    #sign{
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+    }
+}
+
 
 @media (min-height: 640px){
     #cpy_form{

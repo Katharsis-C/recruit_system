@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>修改信息</title>
-		<!-- css -->
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-	<img class="background" src="pics/RegBg.jpg" draggable="false" oncontextmenu="return false">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>修改信息</title>
+	<!-- css -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<style>
+		body{
+			background-image: url("./pics/RegBg.jpg");
+			background-position: center;
+			background-size:100% 100%;
+			overflow:hidden;
+		}
+		p{
+			margin: 0 0 0;
+		}
+	</style>
 </head>
 <!-- javascript -->
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
@@ -66,7 +76,7 @@
 					</div>
 					<div class="form-group">
 						<span class="hint"></span>
-						<input name="number" type="number" id="number" placeholder="&nbsp;学号" class="form-control input">
+						<input name="number" type="number" id="number" placeholder="&nbsp;学号" class="form-control input" required="required">
 					</div>
 					<div class="text-center" id="tips"><h5>带‘*’为必填项</h5></div>
 					<span id="response"></span>
@@ -126,12 +136,14 @@
                                     document.getElementById('response').innerHTML = "该手机号已注册"
                                 } else if (result.msg == "email is registered") {
                                     document.getElementById('response').innerHTML = "该邮箱已注册"
-                                }
+                                } else if (result.msg == "student id is registered"){
+                                    document.getElementById('response').innerHTML="该学号已注册，有想不通的请点下方链接联系管理员"
+								}
                             } else if (result.status == 412) {
                                 if (result.msg == "input error") {
-                                    document.getElementById('response').innerHTML = "输入错误？仔细想想有什么填错了…"
+                                    document.getElementById('response').innerHTML = "输入错误？仔细想想有什么填错或者没填的…"
                                 } else if (result.msg == "information does not exist") {
-                                    document.getElementById('response').innerHTML = "莫非你是传说中的老油条?"
+                                    document.getElementById('response').innerHTML = "信息不匹配？我们只允许大一新生注册，有其他问题的请点击下方链接联系管理员"
                                 }
                             }
                         }
@@ -144,7 +156,7 @@
 	</script>
 </body>
 <footer>
-	<div class="container cpy" id="cpy_form">
+	<div class="cpy" id="cpy_form">
 		<p >Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>
