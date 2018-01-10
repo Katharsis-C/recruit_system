@@ -25,7 +25,7 @@
 	</nav>
 </header>
 <body>
-	<div class="container" id="main">
+	<div class="container DataBox" id="main">
 		<div>
 			<form role="form" name="Data">
 				<input type="hidden" name="_name" id="_name">
@@ -68,11 +68,11 @@
 						<span class="hint"></span>
 						<input name="number" type="number" id="number" placeholder="&nbsp;学号" class="form-control input" required="required">
 					</div>
-					<div class="text-center" id="tips"><h5>带‘*’为必填项</h5></div>
+					<div class="text-center text"><h5>带‘*’为必填项</h5></div>
 					<span id="response"></span>
 					<input type="button" class="btn btn-default btn-block btn-circle-micro" value="修改" id="subBtn" onclick="Subform()">
 					<div class="text-center">
-						<h4><a href="help.html" id="help"> Click here when you are in trouble</a></h4>
+						<h4><a href="help.html" class="help"> Click here when you are in trouble</a></h4>
 					</div>
 				</div>
 			</form>
@@ -90,8 +90,9 @@
                 getClassName();
                 document.getElementById("class").value = getCookie("class");
             });
-            if (!getCookie("name") && !getCookie("mark"))
+            /* if (!getCookie("name") && !getCookie("mark"))
                 window.location.pathname = "/verify_page.html";
+                */
             $('input').focus(function () {
                 $('.hint').text('');
             })
@@ -142,7 +143,7 @@
                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xmlhttp.send(s);
             }
-	</script>
+	</script> <!-- functions -->
 </body>
 <footer>
 	<div class="cpy">

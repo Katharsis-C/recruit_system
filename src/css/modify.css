@@ -1,6 +1,25 @@
-body {
+html, body {
     background-image: url("../pics/RegBg.jpg");
     background-position: center;
     background-size:100% 100%;
     overflow:hidden;
+}
+
+#response {
+    color: #CB4042;
+    font-size: 20px;
+}
+
+.selHint {
+    display: none;
+}
+
+.hint {
+    font-size: 13px;
+    display: block;
+    margin-top: 2px;
+    margin-bottom:5px;
+    color: red;
+    letter-spacing: 1px;
+    float: right;
 }

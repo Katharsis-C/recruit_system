@@ -20,43 +20,11 @@ html,body{
 .input::-moz-placeholder {color: black; opacity: 1; }/* Mozilla Firefox 19+ */
 .input:-ms-input-placeholder {color: black;} /* Internet Explorer 10+ */
 
-/*global*/
-
 .form-control{
     border: 1px solid rgba(255,255,255,0.1);
     background: rgba(255,255,255,0.5);
     color: black;
 }
-
-#response{
-    color: #CB4042;
-    font-size: 20px;
-}
-
-.help{
-    color: white;
-}
-
-#help:hover,#help:active,#help:visited{
-    text-decoration: none;
-}
-
-.hint{
-    font-size: 13px;
-    display: block;
-    margin-top: 2px;
-    margin-bottom:5px;
-    color: red;
-    letter-spacing: 1px;
-}
-
-
-.main{
-    margin-top: 10vh;
-}
-
-
-.selHint{display: none;}
 
 .cpy {
     position: absolute;
@@ -68,93 +36,43 @@ html,body{
     color: white;
     text-align: center;
     max-height: 20px;
+} /*copyright*/
+
+.help,.text {
+    color: white;
+} /*class 'help', 'text' colour white*/
+
+.DataBox {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}/* Forms in 'register' & 'modify' & 'verify' */
+
+.help:hover, .help:active, .help:visited{
+    text-decoration: none;
 }
 
-/*register*/
-#MK{
-    line-height: 2.5;
-    position: fixed;
-    left: 0;
-    right: 0;
-}
-
-#subBtn{
+.btn {
     border-radius: 2em;
     background: transparent;
     border: 1px solid;
     border-radius: 2em;
     border-color: white;
     color: white;
-}
+} /* all buttons in 'register' & 'modify' & 'verify' */
 
-#subBtn:active{
-    background: white;
-    color: deepskyblue;
-}
-
-#Sustext{
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#cpy_su{
-    color: white;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    display: none;
-    text-align: center;
-    max-height: 20px;
-}
-
-#cpy_form{
-    margin-top: 66px;
-}
-
-#Rectangle{
-    height: 4.5ch;
-    background-color: rgba(255,255,255,0.8);
-    border-radius: 3em;
-}
-
-@media(min-height: 540px){
-    #sign{
-        position: absolute;
-        bottom: 10%;
-        left: 0;
-        right: 0;
-    }
-}
-
-
-@media (min-height: 640px){
-    #cpy_form{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-}
 /* animation */
-.main,.mod_form,.cpy {
-    -webkit-animation: fadeIn 0.5s infinite;
-    animation: fadeIn 0.5s infinite;
+html {
+    -webkit-animation: fadeIn 500ms infinite;
+    animation: fadeIn 500ms infinite;
     animation-iteration-count: 1;
     -webkit-animation-iteration-count: 1;
     animation-fill-mode:forwards;
 }
 
 @keyframes fadeIn {
-    from{opacity: 0;}
-    to{opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
-
-@-webkit-keyframes fadeIn {
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-

@@ -5,10 +5,3 @@ html, body {
     overflow: hidden;
 }
 
-.mod_form{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-}

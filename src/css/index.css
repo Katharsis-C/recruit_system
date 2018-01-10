@@ -6,7 +6,6 @@ html, body{
 }
 
 .grText{
-    color: white;
     max-width: 27px;
     float: right;
     font-size: 1.5em;
@@ -55,3 +54,11 @@ html, body{
     text-decoration: none;
 }
 
+@media(min-height: 540px){
+    .sign{
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+    }
+}

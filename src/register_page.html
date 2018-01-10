@@ -7,14 +7,7 @@
 	<!-- css -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<img class="background" src="pics/RegBg.jpg" draggable="false" oncontextmenu="return false" id="bg1">
-	<img class="background" src="pics/SuBg.jpg" draggable="false" oncontextmenu="return false" id="bg2" style="display: none">
-	<style>
-		p{
-			margin: 0 0 0;
-		}
-
-	</style>
+	<link href="css/register.css" rel="stylesheet">
 </head>
 <!-- javascript -->
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
@@ -31,8 +24,8 @@
 		</div>
 	</nav>
 </header>
-<body background="">
-	<div class="container main">
+<body>
+	<div class="container DataBox" id="main">
 		<div>
 			<form role="form" name="Data">
 				<div>
@@ -95,7 +88,7 @@
 			<h3>唯一编码</h3>
 			<h3>请妥善保存，可用于修改报名信息</h3>
 		</div>
-		<div class="container text-center" id="Rectangle">
+		<div class="container text-center textBox">
 			<div id="MK">23333333333</div>
 		</div>
 	</div>
@@ -127,10 +120,6 @@
 							document.getElementById('main').style.display = 'none';
 							document.getElementById('Sustext').style.display = 'inline';
 							document.getElementById('logo').style.display = 'none';
-							document.getElementById('bg1').style.display = 'none';
-							document.getElementById('bg2').style.display = 'inline';
-							document.getElementById('cpy_form').style.display = 'none';
-							document.getElementById('cpy_su').style.display = 'inline';
 						} else if (result.status == 409) {
 							if (result.msg == "phone is registered") {
                                 document.getElementById('response').innerHTML="该手机号已注册"
@@ -159,13 +148,10 @@
             $('.hint').text('');
         })
 
-    </script>
+    </script> <!-- functions -->
 </body>
 <footer>
-	<div class="cpy" id="cpy_form">
-		<p>Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
-	</div>
-	<div id="cpy_su">
+	<div class="cpy">
 		<p>Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>

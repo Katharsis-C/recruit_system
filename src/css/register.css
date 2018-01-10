@@ -1,0 +1,51 @@
+html, body {
+    background-image: url("../pics/LgnBg.jpg");
+    background-position: center;
+    background-size: auto 100%;
+    overflow:hidden;
+}
+
+.textBox {
+    height: 4.5ch;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 3em;
+}
+
+#response {
+    color: #CB4042;
+    font-size: 20px;
+}
+
+#MK{
+    line-height: 2.5;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+#subBtn:active {
+    background: white;
+    color: deepskyblue;
+}
+
+#Sustext {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.selHint {
+    display: none;
+}
+
+.hint {
+    font-size: 13px;
+    display: block;
+    margin-top: 2px;
+    margin-bottom:5px;
+    color: red;
+    letter-spacing: 1px;
+    float: right;
+}

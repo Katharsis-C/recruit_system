@@ -1,4 +1,10 @@
-/*help*/
+html, body{
+    background-image: url("../pics/LgnBg.jpg");
+    background-position: center;
+    background-size:100% 100%;
+    overflow:hidden;
+}
+
 .sos{
     position: absolute;
     left: 0px;
@@ -6,11 +12,4 @@
     top: 50%;
     transform: translateY(-50%);
     color: white;
-}
-
-body{
-    background-image: url("../pics/LgnBg.jpg");
-    background-position: center;
-    background-size:100% 100%;
-    overflow:hidden;
 }

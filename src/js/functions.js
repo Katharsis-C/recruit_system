@@ -21,7 +21,6 @@ function check() {
             hints[i].innerText = "";
         }
     }
-
     return ret;
 };
 
