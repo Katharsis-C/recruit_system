@@ -1,0 +1,57 @@
+html, body{
+    background-image: url("../pics/LgnBg.jpg");
+    background-position: center;
+    background-size: auto 100%;
+    overflow:hidden;
+}
+
+.grText{
+    color: white;
+    max-width: 27px;
+    float: right;
+    font-size: 1.5em;
+    letter-spacing: 6px;
+    position: relative;
+}
+
+.text{
+    padding-right:5%;
+    margin-top: 10vh;
+}
+
+.deadline{
+    color: white;
+    margin-top: 10px;
+}
+
+.linkarea{
+    text-align: center;
+    position: relative;
+}
+
+.linkBtn{
+    display: inline-block;
+    background: transparent;
+    padding: 5px;
+    color: white;
+    margin-top: 15px;
+    width: 250px;
+    border: 1px solid;
+    border-radius: 2em;
+}
+
+
+
+.linkBtn:hover,#subBtn:hover{
+    background: lightgray;
+    border-color: white;
+    color: deepskyblue;
+    text-decoration: none;
+}
+
+.linkBtn:active{
+    background: white;
+    color: deepskyblue;
+    text-decoration: none;
+}
+

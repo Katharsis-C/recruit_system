@@ -1,0 +1,14 @@
+html, body {
+    background-image: url("../pics/RegBg.jpg");
+    background-size: auto 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.mod_form{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}

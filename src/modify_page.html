@@ -7,17 +7,7 @@
 	<!-- css -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<style>
-		body{
-			background-image: url("./pics/RegBg.jpg");
-			background-position: center;
-			background-size:100% 100%;
-			overflow:hidden;
-		}
-		p{
-			margin: 0 0 0;
-		}
-	</style>
+	<link href="css/modify.css" rel="stylesheet">
 </head>
 <!-- javascript -->
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
@@ -105,7 +95,6 @@
             $('input').focus(function () {
                 $('.hint').text('');
             })
-
             function Subform() {
                 var r = check();
                 if (r !== true) {
@@ -156,7 +145,7 @@
 	</script>
 </body>
 <footer>
-	<div class="cpy" id="cpy_form">
+	<div class="cpy">
 		<p >Copyright &copy; 2017 <a href="http://zsxyww.com/">中山学院网络维护科</a></p>
 	</div>
 </footer>

@@ -1,0 +1,6 @@
+body {
+    background-image: url("../pics/RegBg.jpg");
+    background-position: center;
+    background-size:100% 100%;
+    overflow:hidden;
+}

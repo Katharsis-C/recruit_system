@@ -28,32 +28,17 @@ html,body{
     color: black;
 }
 
-.background{
-    position:fixed;
-    width:100%;
-    height:100%;
-    overflow: hidden;
-}
-
 #response{
     color: #CB4042;
     font-size: 20px;
 }
 
-#help{
+.help{
     color: white;
 }
 
 #help:hover,#help:active,#help:visited{
     text-decoration: none;
-}
-
-.cpy{
-    min-width: 284px;
-    background-color: rgba(168,216,185,0.8);
-    color: white;
-    text-align: center;
-    padding-top: 6px;
 }
 
 .hint{
@@ -66,73 +51,24 @@ html,body{
 }
 
 
-
-/*index*/
-.grText{
-    color: white;
-    max-width: 27px;
-    float: right;
-    font-size: 1.5em;
-    letter-spacing: 6px;
-    position: relative;
-}
-
-#text{
-    padding-right:5%;
-    margin-top: 10vh;
-}
-
-#deadline{
-    color: white;
-    margin-top: 10px;
-}
-
-#linkarea{
-    text-align: center;
-    position: relative;
-}
-
-.linkBtn{
-    display: inline-block;
-    background: transparent;
-    padding: 5px;
-    color: white;
-    margin-top: 15px;
-    width: 250px;
-    border: 1px solid;
-    border-radius: 2em;
-}
-
-
-
-.linkBtn:hover,#subBtn:hover{
-    background: lightgray;
-    border-color: white;
-    color: deepskyblue;
-    text-decoration: none;
-}
-
-.linkBtn:active{
-    background: white;
-    color: deepskyblue;
-    text-decoration: none;
-}
-
-#cpy_index{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-}
-
-/*modify*/
-
-#main{
+.main{
     margin-top: 10vh;
 }
 
 
 .selHint{display: none;}
+
+.cpy {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    min-width: 284px;
+    background-color: rgba(168,216,185,0.8);
+    color: white;
+    text-align: center;
+    max-height: 20px;
+}
 
 /*register*/
 #MK{
@@ -185,40 +121,6 @@ html,body{
     border-radius: 3em;
 }
 
-/*help*/
-#sos{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-}
-
-#cpy_hp{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    padding-top: 0;
-}
-
-/*verify*/
-#mod_form{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#cpy_vy{
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-}
-
 @media(min-height: 540px){
     #sign{
         position: absolute;
@@ -238,7 +140,7 @@ html,body{
     }
 }
 /* animation */
-#main,#mod_form,.cpy {
+.main,.mod_form,.cpy {
     -webkit-animation: fadeIn 0.5s infinite;
     animation: fadeIn 0.5s infinite;
     animation-iteration-count: 1;
